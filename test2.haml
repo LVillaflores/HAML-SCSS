@@ -1,0 +1,211 @@
+!!!
+%html{ :lang=>"eng"}
+	%head
+		%title MinPo RegalTheme
+		%meta{ :charset=>"utf-8"}
+		%meta{ :name=>"viewport", :content=>"width=device-width, initial-scale=1.0"}
+		%meta{ :name=>"google-sign-in-scope", :content=>"profile email"}
+		%meta{ :name=>"google-signin-client_id", :content=>"YOUR_CLIENT_ID.apps.googleusercontent.com"}
+		%script{ :src=>"https://ajax.google.apis.com/ajax/libs/jquery/1.8.2/jquery.min/.js"}
+		%script{ :src=>"https://apis.google.com/js/platform.js"}
+		%script{ :src=>"https://code.jquery.com/jquery-3.3.1.slim.min.js", :integrity=>"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :crossorigin=>"anonymous"}
+		%script{ :src=>"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js", :integrity=>"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", 					  			 :crossorigin=>"anonymous"}
+		%script{ :src=>"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js", :integrity=>"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", 										 :crossorigin=>"anonymous"}
+		%link{ :rel=>"stylesheet", :href=>"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", :integrity=>"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", :crossorigin=>"anonymous"}
+		%link{ :rel=>"stylesheet", :type=>"text/css", :href=>"style.css"}
+		%link{ :rel=>"stylesheet", :href=>"https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"}
+		%link{ :href=>"https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap", :rel=>"stylesheet"}
+		%link{ :href=>"https://fonts.googleapis.com/css?family=Lato:400,700&display=swap", :rel=>"stylesheet"}
+		%script{ :src=>"jsfile.js"}
+
+	%body
+
+		#loading-wrap{:style=>'dislay:none'}
+			.loading-effect
+
+		%header.Sticky_Header.sticky-top
+			%nav.navbar.navbar-expand-lg.navbar-light.pt-4.pb-4
+				.container
+					%a.navbar-brand{ :href => "index.html"}
+						%img{:alt=>"Logo", :src=>"logo.png"}
+					%button{:class=>'navbar-toggler', :type=>'button', :"data-toggle"=>'collapse', :"data-target"=>'#menu', :"aria-controls"=>'menu', :"aria-expanded"=>'true', :"aria-label"=>'Toggle Navigation'}
+						%span.navbar-toggler-icon
+					.collapse.navbar-collapse#menu
+						%ul{:class=>"nav navbar-nav navigation ml-auto clearfix"}
+							%li.nav-item.active
+								%a{ :class=>"nav-link", :href=>"#", :title=>"Home"}Home
+								%span.sr-only
+							%li.nav-item
+								%a{ :class=>"nav-link",:href=>"#", :title=>"About Us"}About Us
+							%li.nav-item
+								%a{ :class=>"nav-link", :href=>"#", :title=>"Portfolio"}Portfolio
+							%li.nav-item
+								%a{ :class=>"nav-link", :href=>"#", :title=>"Blog"}Blog
+							%li.nav-item
+								%a{ :class=>"nav-link", :href=>"#", :title=>"Pages"}Pages
+							%li.nav-item
+								%a{ :class=>"nav-link", :href=>"#", :title=>"Contact"}Contact Us
+						.g-signin2{ :"data-onsuccess"=>"onSignIn", :"data-theme"=>"dark"}
+						.info
+							%button#info{ :type=>"button", :class=>"btn btn-success", :onclick=>"SignOut()", :style=>"display:none;"}Info
+						.test
+							%button#test{ :type=>"button", :class=>"btn", :onclick=>"SignOut()"}Test
+						.sign-out
+							%button#out{ :type=>"button", :class=>"btn btn-danger", :onclick=>"SignOut()", :style=>"display:none;"}Sign-Out
+
+		.large-image
+			.Jumbo-Text
+				.container
+					.row
+						.col-xs-12
+							.Jumbo-Text
+								%h1.display-4 MiniPo
+								%h2.sub Minimal Portfolio Template
+
+		.menu.text-center#sort
+			%ul.list-unstyled.list-inline
+				%li.list-inline-item.active
+					%a{:class=>"sort-link-active", :href=>"#"}All
+					%span.sr-only
+				%li.list-inline-item
+					%a{:class=>"sort-link", :href=>"#"}Web
+				%li.list-inline-item
+					%a{:class=>"sort-link", :href=>"#"}Design
+				%li.list-inline-item
+					%a{:class=>"sort-link", :href=>"#"}New
+				%li.list-inline-item
+					%a{:class=>"sort-link", :href=>"#"}Print
+				%li.list-inline-item
+					%a{:class=>"sort-link", :href=>"#"}3D Work
+
+		.container
+			.card-columns.pb-9
+				.card
+					%image(class="card-img-top" src="Images/1.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/2.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/3.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/4.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/5.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/6.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/7.png" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/8.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/9.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/10.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/11.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/12.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/13.png" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/14.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+				.card
+					%image(class="card-img-top" src="Images/15.jpeg" alt="Card image cap")
+						.card-body
+							%h5.card-title Portfolio Item
+							%h6.card-subtitle.mb-2.text-muted Print, Branding
+
+		.jumbotron.p-3.mb-2.bg-light.text-dark.pt-5
+			.latest-news
+				.h2.hnews Latest News
+				%br
+				%pre.pnews 
+					Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a 
+					piece of classical Latin literature from 45 BC, making
+			.short-border
+			.container
+				.card-deck
+					.card
+						%image(class="card-img-top" src="Images/16.jpeg" alt="Card image cap")
+							.card-body
+								%h5.card-title Portfolio Item
+								%h6.card-subtitle.mb-2.text-muted Print, Branding
+					.card
+						%image(class="card-img-top" src="Images/17.jpeg" alt="Card image cap")
+							.card-body
+								%h5.card-title Portfolio Item
+								%h6.card-subtitle.mb-2.text-muted Print, Branding
+					.card
+						%image(class="card-img-top" src="Images/18.jpeg" alt="Card image cap")
+							.card-body
+								%h5.card-title Portfolio Item
+								%h6.card-subtitle.mb-2.text-muted Print, Branding
+
+		%footer.white-bg.pt-2.clearfix
+			.container
+				.row
+					.col-xs-6
+						.left.pull-left
+							%p.footer_copyright Copyright © 2017 Regaltheme.
+					.col-xs-12.col-sm-2.col-md-9
+						.social-icon.simple.float-right
+							%ul.list-unstyled.list-inline.social
+								%li.list-inline-item
+									%a{:href=>"http://www.facebook.com", :target=>"_blank", :title=>"Facebook"}
+										%i{:class=>"zmdi zmdi-facebook mdc-text-grey"}
+								%li.list-inline-item
+									%a{:href=>"http://www.twitter.com", :target=>"_blank", :title=>"Twitter"}
+										%i{:class=>"zmdi zmdi-twitter mdc-text-grey"}
+								%li.list-inline-item
+									%a{:href=>"http://www.pinterest.com", :target=>"_blank", :title=>"Pinterest"}
+										%i{:class=>"zmdi zmdi-pinterest mdc-text-grey"}
+								%li.list-inline-item
+									%a{:href=>"http://www.linkedin.com", :target=>"_blank", :title=>"LinkedIn"}
+										%i{:class=>"zmdi zmdi-linkedin mdc-text-grey"}
+								%li.list-inline-item
+									%a{:href=>"http://www.instagram.com", :target=>"_blank", :title=>"Instagram"}
+										%i{:class=>"zmdi zmdi-instagram mdc-text-grey"} 
+
+		%a{ :id=>"scrollUp", :onclick=>"topFunction()", :style=>"display: block; position: fixed;"}
+			%i{ :class=>"zmdi zmdi-chevron-up zmdi-hc-2x mdc-text-grey"}
