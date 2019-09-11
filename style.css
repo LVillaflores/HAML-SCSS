@@ -230,6 +230,8 @@ div {
   height: 160px;
   width: 500px;
   border-style: none;
+  font-family: Open Sans, sans-serif;
+  color: #6c6c6c;
 }
 
 #MailImage {
