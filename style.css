@@ -232,16 +232,6 @@ div {
   border-style: none;
 }
 
-#MailInfo {
-  opacity: 0.3;
-}
-
-#MailInfo:after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 #MailImage {
   padding: 10px;
 }
