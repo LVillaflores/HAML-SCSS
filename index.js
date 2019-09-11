@@ -1,10 +1,25 @@
 var discoveryDocs=[''];
-if(navigator.onLine){
-	} 
+var ifConnected = window.navigator.onLine;
+if (ifConnected) {
+		document.getElementById("checkOnline").innerHTML = "Online";
+		document.getElementById("checkOnline").style.color = "green";
+} 
 else {
-	alert('No Internet Connectio Available');
+		document.getElementById("checkOnline").innerHTML = "Offline";
+		document.getElementById("checkOnline").style.color = "red";
 }
 
+setInterval(function(){ 
+	var ifConnected = window.navigator.onLine;
+	if (ifConnected) {
+		document.getElementById("checkOnline").innerHTML = "Online";
+		document.getElementById("checkOnline").style.color = "green";
+	} 
+	else {
+		document.getElementById("checkOnline").innerHTML = "Offline";
+		document.getElementById("checkOnline").style.color = "red";
+	}
+}, 3000);
 function HandleGoogleApiLibrary() {
 gapi.load('client:auth2',  {
 	callback: function() {
