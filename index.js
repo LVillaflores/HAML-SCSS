@@ -159,22 +159,26 @@ function scrollFunction() {
   }
 }
 
-var ifConnected = window.navigator.onLine;
-	if (ifConnected) {
-	  document.getElementById("checkOnline").innerHTML="Online";
-	  document.getElementById("checkOnline").style.color = "green";
-	} else {
-	  document.getElementById("checkOnline").innerHTML="Offline";
-	  document.getElementById("checkOnline").style.color = "red";
-	}
-
-setInterval(function(){ 
+window.addEventListener('load', function () {
 	var ifConnected = window.navigator.onLine;
-	if (ifConnected) {
-	  document.getElementById("checkOnline").innerHTML="Online";
-	  document.getElementById("checkOnline").style.color = "green";
-	} else {
-	  document.getElementById("checkOnline").innerHTML="Offline";
-	  document.getElementById("checkOnline").style.color = "red";
-	}
-}, 3000);
+		if (ifConnected) {
+		  document.getElementById("checkOnline").innerHTML="Online";
+		  document.getElementById("checkOnline").style.color = "green";
+		} 
+		else {
+		  document.getElementById("checkOnline").innerHTML="Offline";
+		  document.getElementById("checkOnline").style.color = "red";
+		}
+
+	setInterval(function(){ 
+		var ifConnected = window.navigator.onLine;
+		if (ifConnected) {
+		  document.getElementById("checkOnline").innerHTML="Online";
+		  document.getElementById("checkOnline").style.color = "green";
+		} 
+		else {
+		  document.getElementById("checkOnline").innerHTML="Offline";
+		  document.getElementById("checkOnline").style.color = "red";
+		}
+	}, 3000);
+}, false);
