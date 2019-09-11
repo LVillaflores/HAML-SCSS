@@ -63,13 +63,22 @@ $(".g-signin2").on('click', function() {
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
 var profile = googleUser.getBasicProfile();
+var message = 'ID: ' + profile.getId() + "\n" + 'Name: ' + profile.getName() + "\n"+ 'Image URL: ' + profile.getImageUrl() + "\n" + 'Email: ' + profile.getEmail();
+var verify = googleUser.isSignedIn();
 	console.log("ID: " + profile.getId()); // Don't send this directly to your server!
 	console.log('Full Name: ' + profile.getName());
 	console.log('Given Name: ' + profile.getGivenName());
 	console.log('Family Name: ' + profile.getFamilyName());
 	console.log("Image URL: " + profile.getImageUrl());
 	console.log("Email: " + profile.getEmail());
-	display_button();
+	document.getElementById("UserInfo").value=message;
+	setProfileImage(profile.getImageUrl());
+	if(verify == true){
+		document.getElementById("out").style.display="block";
+	}
+	else{
+		document.getElementById("out").style.display="none";
+	}
 
 // The ID token you need to pass to your backend:
 var id_token = googleUser.getAuthResponse().id_token;
@@ -78,16 +87,26 @@ var id_token = googleUser.getAuthResponse().id_token;
 
 function signOut() {
 	var auth2 = gapi.auth2.getAuthInstance();
-	if(GoogleUser.is.SignedIn() == true){
-		document.getElementById("out").style.display="block";
-		document.getElementById("info").style.display="block";
 		auth2.disconnect().then(function ()
-			{console.log('User signed out.');});
-	}
-	else{
+			{console.log('User signed out.');
+			setMessage("User signed out");
+			setProfileImage(null);});	
 		document.getElementById("out").style.display="none";
-		document.getElementById("info").style.display="none";
-	}
+}
+
+function setMessage(message) {
+	document.getElementById("UserInfo").value = message;
+}
+
+function setProfileImage(srcUrl) {
+	var element = document.getElementById("profileImage");
+		if (srcUrl == null) {
+			element.style.display = "none";
+			element.src = "";
+		} else {
+			element.style.display = "block";
+			element.src = srcUrl;
+		}
 }
 
 /*function SignOut(){
