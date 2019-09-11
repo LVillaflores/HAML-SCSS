@@ -69,7 +69,14 @@ var profile = googleUser.getBasicProfile();
 	console.log('Family Name: ' + profile.getFamilyName());
 	console.log("Image URL: " + profile.getImageUrl());
 	console.log("Email: " + profile.getEmail());
-	signOut();
+	if(GoogleUser.is.SignedIn() == true){
+		document.getElementById("out").style.display="block";
+		document.getElementById("info").style.display="block";
+	}
+	else{
+		document.getElementById("out").style.display="none";
+		document.getElementById("info").style.display="none";
+	}
 
 // The ID token you need to pass to your backend:
 var id_token = googleUser.getAuthResponse().id_token;
@@ -78,16 +85,10 @@ var id_token = googleUser.getAuthResponse().id_token;
 
 function signOut() {
 	var auth2 = gapi.auth2.getAuthInstance();
-	if(GoogleUser.is.SignedIn() == true){
-		document.getElementById("out").style.display="block";
-		document.getElementById("info").style.display="block";
 		auth2.disconnect().then(function ()
-			{console.log('User signed out.');});
-	}
-	else{
+			{console.log('User signed out.');});	
 		document.getElementById("out").style.display="none";
 		document.getElementById("info").style.display="none";
-	}
 }
 
 /*function SignOut(){
