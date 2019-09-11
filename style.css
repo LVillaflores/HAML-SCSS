@@ -236,4 +236,8 @@ div {
   padding: 10px;
 }
 
+#profileImage {
+  border-radius: 50%;
+}
+
 /*# sourceMappingURL=style.css.map */
