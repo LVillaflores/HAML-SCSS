@@ -75,11 +75,9 @@ var verify = googleUser.isSignedIn();
 	setProfileImage(profile.getImageUrl());
 	if(verify == true){
 		document.getElementById("out").style.display="block";
-		document.getElementById("info").style.display="block";
 	}
 	else{
 		document.getElementById("out").style.display="none";
-		document.getElementById("info").style.display="none";
 	}
 
 // The ID token you need to pass to your backend:
@@ -94,7 +92,6 @@ function signOut() {
 			setMessage("User signed out");
 			setProfileImage(null);});	
 		document.getElementById("out").style.display="none";
-		document.getElementById("info").style.display="none";
 }
 
 function setMessage(message) {
