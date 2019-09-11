@@ -229,6 +229,12 @@ div {
   resize: none;
   height: 160px;
   width: 500px;
+  border-style: none;
+  opacity: 0.3;
+}
+
+#UserInfo:after {
+  position: absolute;
 }
 
 #MailImage {
