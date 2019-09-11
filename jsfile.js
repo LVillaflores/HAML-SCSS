@@ -72,6 +72,7 @@ var verify = googleUser.isSignedIn();
 	console.log("Image URL: " + profile.getImageUrl());
 	console.log("Email: " + profile.getEmail());
 	document.getElementById("UserInfo").value=message;
+	setProfileImage(profile.getImageUrl());
 	if(verify == true){
 		document.getElementById("out").style.display="block";
 		document.getElementById("info").style.display="block";
