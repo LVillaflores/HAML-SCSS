@@ -1,25 +1,5 @@
 var discoveryDocs=[''];
-var ifConnected = window.navigator.onLine;
-if (ifConnected) {
-		document.getElementById("checkOnline").innerHTML = "Online";
-		document.getElementById("checkOnline").style.color = "green";
-} 
-else {
-		document.getElementById("checkOnline").innerHTML = "Offline";
-		document.getElementById("checkOnline").style.color = "red";
-}
 
-setInterval(function(){ 
-	var ifConnected = window.navigator.onLine;
-	if (ifConnected) {
-		document.getElementById("checkOnline").innerHTML = "Online";
-		document.getElementById("checkOnline").style.color = "green";
-	} 
-	else {
-		document.getElementById("checkOnline").innerHTML = "Offline";
-		document.getElementById("checkOnline").style.color = "red";
-	}
-}, 3000);
 function HandleGoogleApiLibrary() {
 gapi.load('client:auth2',  {
 	callback: function() {
@@ -173,3 +153,25 @@ function scrollFunction() {
     scrollUp.style.display = "none";
   }
 }
+
+var ifConnected = window.navigator.onLine;
+if (ifConnected) {
+		document.getElementById("checkOnline").innerHTML = "Online";
+		document.getElementById("checkOnline").style.color = "green";
+} 
+else {
+		document.getElementById("checkOnline").innerHTML = "Offline";
+		document.getElementById("checkOnline").style.color = "red";
+}
+
+setInterval(function(){ 
+	var ifConnected = window.navigator.onLine;
+	if (ifConnected) {
+		document.getElementById("checkOnline").innerHTML = "Online";
+		document.getElementById("checkOnline").style.color = "green";
+	} 
+	else {
+		document.getElementById("checkOnline").innerHTML = "Offline";
+		document.getElementById("checkOnline").style.color = "red";
+	}
+}, 3000);
