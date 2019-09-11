@@ -16,7 +16,7 @@
 		%link{ :rel=>"stylesheet", :href=>"https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"}
 		%link{ :href=>"https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap", :rel=>"stylesheet"}
 		%link{ :href=>"https://fonts.googleapis.com/css?family=Lato:400,700&display=swap", :rel=>"stylesheet"}
-		%script{ :src=>"jsfile.js"}
+		%script{ :src=>"index.js"}
 
 	%body
 
@@ -33,7 +33,7 @@
 					.collapse.navbar-collapse#menu
 						%ul{:class=>"nav navbar-nav navigation ml-auto clearfix"}
 							%li.nav-item.active
-								%a{ :class=>"nav-link", :href=>"#", :title=>"Home"}Home
+								%a{ :class=>"nav-link", :href=>"output.html", :title=>"Home"}Home
 								%span.sr-only
 							%li.nav-item
 								%a{ :class=>"nav-link",:href=>"#", :title=>"About Us"}About Us
@@ -47,12 +47,12 @@
 								%a{ :class=>"nav-link", :href=>"#", :title=>"Contact"}Contact Us
 						.g-signin2{ :"data-onsuccess"=>"onSignIn", :"data-theme"=>"dark"}
 						.info
-							%button#info{ :type=>"button", :class=>"btn btn-success", :onclick=>"SignOut()", :style=>"display:none;"}Info
+							%button#info{ :type=>"button", :class=>"btn btn-success", :onclick=>"signOut()", :style=>"display:none;"}Info
 						.test
-							%button#test{ :type=>"button", :class=>"btn", :onclick=>"SignOut()"}Test
+							%button#test{ :type=>"button", :class=>"btn", :onclick=>"signOut()", :style=>"display:none;"}Test
 						.sign-out
-							%button#out{ :type=>"button", :class=>"btn btn-danger", :onclick=>"SignOut()", :style=>"display:none;"}Sign-Out
-
+							%button#out{ :type=>"button", :class=>"btn btn-danger", :onclick=>"signOut()", :style=>"display:none;"}Sign-Out
+						
 		.large-image
 			.Jumbo-Text
 				.container
@@ -61,6 +61,11 @@
 							.Jumbo-Text
 								%h1.display-4 MiniPo
 								%h2.sub Minimal Portfolio Template
+		.container
+			.d-flex.justify-content-center#MailImage
+				%image{ :id=>"profileImage", :src=>" "}
+			.d-flex.justify-content-center#MailInfo
+				%textarea{ :id=>"UserInfo", :type=>"text", :readonly=>"true"}
 
 		.menu.text-center#sort
 			%ul.list-unstyled.list-inline

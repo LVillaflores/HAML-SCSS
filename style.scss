@@ -227,7 +227,7 @@ div{
 }
 
 .menu{
-    padding-top:120px;
+    padding-top:10px;
     padding-bottom: 20px;
 }
 
@@ -263,4 +263,21 @@ div{
 
 .mdc-text-grey {
   color: #9e9e9e;
+}
+
+#UserInfo{
+	resize: none;
+	height: 160px;
+	width: 500px;
+	border-style: none;
+	font-family: $font-body;
+	color: $color-navcolor;
+}
+
+#MailImage{
+	padding: 10px;
+}
+
+#profileImage{
+	border-radius: 50%;
 }
