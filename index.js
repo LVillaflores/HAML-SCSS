@@ -1,5 +1,3 @@
-var discoveryDocs=[''];
-
 function HandleGoogleApiLibrary() {
 gapi.load('client:auth2',  {
 	callback: function() {
