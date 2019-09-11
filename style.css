@@ -225,4 +225,9 @@ div {
   color: #9e9e9e;
 }
 
+#UserInfo {
+  resize: none;
+  height: 160px;
+}
+
 /*# sourceMappingURL=style.css.map */

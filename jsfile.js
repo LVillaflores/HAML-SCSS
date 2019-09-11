@@ -63,8 +63,8 @@ $(".g-signin2").on('click', function() {
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
 var profile = googleUser.getBasicProfile();
-var message = 'ID: ' + profile.getId() + "\n" + 'Name: ' + profile.getName() + "\n"+ 'Image URL: ' + profile.getImageUrl() + "\n" + 'Email: ' + profile.getEmail();
 var verify = googleUser.isSignedIn();
+var message = 'ID: ' + profile.getId() + "\n" + 'Name: ' + profile.getName() + "\n"+ 'Image URL: ' + profile.getImageUrl() + "\n" + 'Email: ' + profile.getEmail();
 	console.log("ID: " + profile.getId()); // Don't send this directly to your server!
 	console.log('Full Name: ' + profile.getName());
 	console.log('Given Name: ' + profile.getGivenName());
@@ -92,6 +92,7 @@ function signOut() {
 			setMessage("User signed out");
 			setProfileImage(null);});	
 		document.getElementById("out").style.display="none";
+		document.getElementById("info").style.display="none";
 }
 
 function setMessage(message) {
