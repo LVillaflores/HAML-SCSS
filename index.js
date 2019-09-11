@@ -73,6 +73,11 @@ var message = 'ID: ' + profile.getId() + "\n" + 'Name: ' + profile.getName() + "
 	console.log("Email: " + profile.getEmail());
 	document.getElementById("UserInfo").value=message;
 	setProfileImage(profile.getImageUrl());
+	if(navigator.onLine){
+	} 
+	 else {
+	  alert('No Internet Connectio Available');
+	}
 	if(verify == true){
 		document.getElementById("out").style.display="block";
 	}
@@ -153,9 +158,3 @@ function scrollFunction() {
     scrollUp.style.display = "none";
   }
 }
-
-if(navigator.onLine){
-  alert('online');
- } else {
-  alert('offline');
- }
