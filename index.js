@@ -132,13 +132,13 @@ function show_info(){
 
 function topFunction() {
   window.scroll({
-	  top: -2800, 
+	  top: -10000, 
 	  left: 0, 
 	  behavior: 'smooth'
 	});
 
 	window.scrollBy({ 
-	  top: -2800,
+	  top: -10000,
 	  left: 0, 
 	  behavior: 'smooth' 
 	});
