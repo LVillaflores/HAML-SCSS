@@ -153,3 +153,9 @@ function scrollFunction() {
     scrollUp.style.display = "none";
   }
 }
+
+if(navigator.onLine){
+  alert('online');
+ } else {
+  alert('offline');
+ }
