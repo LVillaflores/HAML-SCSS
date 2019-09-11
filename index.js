@@ -159,6 +159,7 @@ function scrollFunction() {
   }
 }
 
+window.onload={
 var ifConnected = window.navigator.onLine;
 	if (ifConnected) {
 	  document.getElementById("checkOnline").innerHTML="Online";
@@ -177,3 +178,4 @@ setInterval(function(){
 	  document.getElementById("checkOnline").style.color = "red";
 	}
 }, 3000);
+}
