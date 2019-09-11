@@ -1,61 +1,61 @@
-function HandleGoogleApiLibrary() {
-gapi.load('client:auth2',  {
-	callback: function() {
-		gapi.client.init({
-			apiKey: 'AIzaSyCy79wKjon3b9RRAxfqqMnOyxHclCbKm8g',
-			clientId: '661047287510-22938i57ja33qpt96s99kvdjgjerrhos.apps.googleusercontent.com',
-			scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me'
-		}).then(
-		function(success) {
-		}, 
-		function(error) {
-			console.log(error);
-	  }
-	);
-},
-onerror: function() {
-}
-});
-}
+// function HandleGoogleApiLibrary() {
+// gapi.load('client:auth2',  {
+// 	callback: function() {
+// 		gapi.client.init({
+// 			apiKey: 'AIzaSyCy79wKjon3b9RRAxfqqMnOyxHclCbKm8g',
+// 			clientId: '661047287510-22938i57ja33qpt96s99kvdjgjerrhos.apps.googleusercontent.com',
+// 			scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me'
+// 		}).then(
+// 		function(success) {
+// 		}, 
+// 		function(error) {
+// 			console.log(error);
+// 	  }
+// 	);
+// },
+// onerror: function() {
+// }
+// });
+// }
 
-$(".g-signin2").on('click', function() {
-	$(".g-signin2").attr('disabled', 'disabled');
+// $(".g-signin2").on('click', function() {
+// 	$(".g-signin2").attr('disabled', 'disabled');
 			
-	// API call for Google login
-	gapi.auth2.getAuthInstance().signIn().then(
-		// On success
-		function(success) {
-			// API call to get user information
-			gapi.client.request({ path: 'https://www.googleapis.com/plus/v1/people/me' }).then(
-				// On success
-				function(success) {
-					console.log(success);
-					var user_info = JSON.parse(success.body);
-					console.log(user_info);
+// 	// API call for Google login
+// 	gapi.auth2.getAuthInstance().signIn().then(
+// 		// On success
+// 		function(success) {
+// 			// API call to get user information
+// 			gapi.client.request({ path: 'https://www.googleapis.com/plus/v1/people/me' }).then(
+// 				// On success
+// 				function(success) {
+// 					console.log(success);
+// 					var user_info = JSON.parse(success.body);
+// 					console.log(user_info);
 
-					$("#user-information div").eq(0).find("span").text(user_info.displayName);
-					$("#user-information div").eq(1).find("span").text(user_info.id);
-					$("#user-information div").eq(2).find("span").text(user_info.gender);
-					$("#user-information div").eq(3).find("span").html('<img src="' + user_info.image.url + '" />');
-					$("#user-information div").eq(4).find("span").text(user_info.emails[0].value);
+// 					$("#user-information div").eq(0).find("span").text(user_info.displayName);
+// 					$("#user-information div").eq(1).find("span").text(user_info.id);
+// 					$("#user-information div").eq(2).find("span").text(user_info.gender);
+// 					$("#user-information div").eq(3).find("span").html('<img src="' + user_info.image.url + '" />');
+// 					$("#user-information div").eq(4).find("span").text(user_info.emails[0].value);
 
-					$("#user-information").show();
-					$("#login-button").hide();
-				},
-				// On error
-				function(error) {
-					$("#login-button").removeAttr('disabled');
-					alert('Error : Failed to get user user information');
-				}
-			);
-		},
-		// On error
-		function(error) {
-			$("#login-button").removeAttr('disabled');
-			alert('Error : Login Failed');
-		}
-	);
-});
+// 					$("#user-information").show();
+// 					$("#login-button").hide();
+// 				},
+// 				// On error
+// 				function(error) {
+// 					$("#login-button").removeAttr('disabled');
+// 					alert('Error : Failed to get user user information');
+// 				}
+// 			);
+// 		},
+// 		// On error
+// 		function(error) {
+// 			$("#login-button").removeAttr('disabled');
+// 			alert('Error : Login Failed');
+// 		}
+// 	);
+// });
 
 
 function onSignIn(googleUser) {
