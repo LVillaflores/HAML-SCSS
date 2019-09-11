@@ -1,4 +1,9 @@
 var discoveryDocs=[''];
+if(navigator.onLine){
+	} 
+else {
+	alert('No Internet Connectio Available');
+}
 
 function HandleGoogleApiLibrary() {
 gapi.load('client:auth2',  {
@@ -73,11 +78,6 @@ var message = 'ID: ' + profile.getId() + "\n" + 'Name: ' + profile.getName() + "
 	console.log("Email: " + profile.getEmail());
 	document.getElementById("UserInfo").value=message;
 	setProfileImage(profile.getImageUrl());
-	if(navigator.onLine){
-	} 
-	 else {
-	  alert('No Internet Connectio Available');
-	}
 	if(verify == true){
 		document.getElementById("out").style.display="block";
 	}
