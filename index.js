@@ -73,6 +73,11 @@ var message = 'ID: ' + profile.getId() + "\n" + 'Name: ' + profile.getName() + "
 	console.log("Email: " + profile.getEmail());
 	document.getElementById("UserInfo").value=message;
 	setProfileImage(profile.getImageUrl());
+	if(navigator.onLine){
+	} 
+	 else {
+	  alert('No Internet Connection Available');
+	}
 	if(verify == true){
 		document.getElementById("out").style.display="block";
 	}
@@ -132,13 +137,13 @@ function show_info(){
 
 function topFunction() {
   window.scroll({
-	  top: -10000, 
+	  top: -2800, 
 	  left: 0, 
 	  behavior: 'smooth'
 	});
 
 	window.scrollBy({ 
-	  top: -10000,
+	  top: -2800,
 	  left: 0, 
 	  behavior: 'smooth' 
 	});
@@ -155,23 +160,20 @@ function scrollFunction() {
 }
 
 var ifConnected = window.navigator.onLine;
-if (ifConnected) {
-		document.getElementById("checkOnline").innerHTML="Online";
-		document.getElementById("checkOnline").style.color="green";
-} 
-else {
-		document.getElementById("checkOnline").innerHTML="Offline";
-		document.getElementById("checkOnline").style.color="red";
-}
-
+	if (ifConnected) {
+	  document.getElementById("checkOnline").innerHTML="Online";
+	  document.getElementById("checkOnline").style.color = "green";
+	} else {
+	  document.getElementById("checkOnline").innerHTML="Offline";
+	  document.getElementById("checkOnline").style.color = "red";
+	}
 setInterval(function(){ 
 	var ifConnected = window.navigator.onLine;
 	if (ifConnected) {
-		document.getElementById("checkOnline").innerHTML="Online";
-		document.getElementById("checkOnline").style.color="green";
-	} 
-	else {
-		document.getElementById("checkOnline").innerHTML="Offline";
-		document.getElementById("checkOnline").style.color="red";
+	  document.getElementById("checkOnline").innerHTML="Online";
+	  document.getElementById("checkOnline").style.color = "green";
+	} else {
+	  document.getElementById("checkOnline").innerHTML="Offline";
+	  document.getElementById("checkOnline").style.color = "red";
 	}
 }, 3000);
